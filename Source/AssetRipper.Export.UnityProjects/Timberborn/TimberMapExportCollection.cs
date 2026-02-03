@@ -38,7 +38,7 @@ public sealed class TimberMapExportCollection : AssetsExportCollection<IPrefabIn
                 {
                     if (!monoBehaviour.Script.TryGetAsset(monoBehaviour.Collection, out IMonoScript? script))
                         continue;
-                    if (script.Namespace.String == "Timberborn.AssetSystem" && asset.OriginalDirectory == "Assets/Resources/maps") {
+                    if (script.Namespace.String == "Timberborn.AssetSystem" && MapDirectories.Contains(asset.OriginalDirectory)) {
                         return true;
                     }
                 }
@@ -71,4 +71,11 @@ public sealed class TimberMapExportCollection : AssetsExportCollection<IPrefabIn
         return false;
     }
 	public const string TimberKeyword = "timber";
+
+    public static string[] MapDirectories = {
+        "Assets/Resources/maps",
+        "Assets\\Resources\\maps"
+    };
+    public const string MapDirectory1 = "Assets/Resources/maps";
+    public const string MapDirectory2 = "Assets\\Resources\\maps";
 }
