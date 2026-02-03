@@ -159,9 +159,25 @@ public sealed partial class SettingsPage : DefaultPage
 								}
 								using (new Div(writer).WithClass("col").End())
 								{
+									WriteDropDownForShaderNamingExportMode(writer);
 								}
 							}
 
+							using (new Div(writer).WithClass("row").End())
+							{
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteDropDownForBlueprintExportFormat(writer);
+								}
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteDropDownForTimbermeshExportFormat(writer);
+								}
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteDropDownForTimberMapExportFormat(writer);
+								}
+							}
 							using (new Div(writer).WithClass("row").End())
 							{
 								using (new Div(writer).WithClass("col").End())

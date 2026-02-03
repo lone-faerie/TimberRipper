@@ -49,6 +49,26 @@ public sealed record class ExportSettings
 	/// </summary>
 	public TextExportMode TextExportMode { get; set; } = TextExportMode.Parse;
 
+	/// <summary>
+	/// How are blueprint assets exported?
+	/// </summary>
+	public BlueprintExportFormat BlueprintExportFormat { get; set; } = BlueprintExportFormat.Json;
+
+	/// <summary>
+	/// How are timbermesh assets exported?
+	/// </summary>
+	public TimbermeshExportFormat TimbermeshExportFormat { get; set; } = TimbermeshExportFormat.Default;
+
+	/// <summary>
+	/// How are Timberborn map assets exported?
+	/// </summary>
+	public TimberMapExportFormat TimberMapExportFormat { get; set; } = TimberMapExportFormat.Default;
+
+	/// <summary>
+	/// How should shaders be named?
+	/// </summary>
+	public ShaderNamingExportMode ShaderNamingExportMode { get; set; } = ShaderNamingExportMode.Ripped;
+
 	public bool ExportUnreadableAssets { get; set; } = false;
 
 	public bool SaveSettingsToDisk { get; set; }
@@ -65,6 +85,10 @@ public sealed record class ExportSettings
 		Logger.Info(LogCategory.General, $"{nameof(ShaderExportMode)}: {ShaderExportMode}");
 		Logger.Info(LogCategory.General, $"{nameof(SpriteExportMode)}: {SpriteExportMode}");
 		Logger.Info(LogCategory.General, $"{nameof(TextExportMode)}: {TextExportMode}");
+		Logger.Info(LogCategory.General, $"{nameof(BlueprintExportFormat)}: {BlueprintExportFormat}");
+		Logger.Info(LogCategory.General, $"{nameof(TimbermeshExportFormat)}: {TimbermeshExportFormat}");
+		Logger.Info(LogCategory.General, $"{nameof(TimberMapExportFormat)}: {TimberMapExportFormat}");
+		Logger.Info(LogCategory.General, $"{nameof(ShaderNamingExportMode)}: {ShaderNamingExportMode}");
 		Logger.Info(LogCategory.General, $"{nameof(ExportUnreadableAssets)}: {ExportUnreadableAssets}");
 	}
 }

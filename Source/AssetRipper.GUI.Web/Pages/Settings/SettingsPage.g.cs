@@ -54,6 +54,18 @@ partial class SettingsPage
 			case nameof(ExportSettings.TextExportMode):
 				Configuration.ExportSettings.TextExportMode = TryParseEnum<TextExportMode>(value);
 				break;
+			case nameof(ExportSettings.BlueprintExportFormat):
+				Configuration.ExportSettings.BlueprintExportFormat = TryParseEnum<BlueprintExportFormat>(value);
+				break;
+			case nameof(ExportSettings.TimbermeshExportFormat):
+				Configuration.ExportSettings.TimbermeshExportFormat = TryParseEnum<TimbermeshExportFormat>(value);
+				break;
+			case nameof(ExportSettings.TimberMapExportFormat):
+				Configuration.ExportSettings.TimberMapExportFormat = TryParseEnum<TimberMapExportFormat>(value);
+				break;
+			case nameof(ExportSettings.ShaderNamingExportMode):
+				Configuration.ExportSettings.ShaderNamingExportMode = TryParseEnum<ShaderNamingExportMode>(value);
+				break;
 			case nameof(ExportSettings.LanguageCode):
 				Configuration.ExportSettings.LanguageCode = value;
 				break;
@@ -161,6 +173,26 @@ partial class SettingsPage
 	private static void WriteDropDownForTextExportMode(TextWriter writer)
 	{
 		WriteDropDown(writer, TextExportModeDropDownSetting.Instance, Configuration.ExportSettings.TextExportMode, nameof(ExportSettings.TextExportMode));
+	}
+
+	private static void WriteDropDownForBlueprintExportFormat(TextWriter writer)
+	{
+		WriteDropDown(writer, BlueprintExportFormatDropDownSetting.Instance, Configuration.ExportSettings.BlueprintExportFormat, nameof(ExportSettings.BlueprintExportFormat));
+	}
+
+	private static void WriteDropDownForTimbermeshExportFormat(TextWriter writer)
+	{
+		WriteDropDown(writer, TimbermeshExportFormatDropDownSetting.Instance, Configuration.ExportSettings.TimbermeshExportFormat, nameof(ExportSettings.TimbermeshExportFormat));
+	}
+
+	private static void WriteDropDownForTimberMapExportFormat(TextWriter writer)
+	{
+		WriteDropDown(writer, TimberMapExportFormatDropDownSetting.Instance, Configuration.ExportSettings.TimberMapExportFormat, nameof(ExportSettings.TimberMapExportFormat));
+	}
+
+	private static void WriteDropDownForShaderNamingExportMode(TextWriter writer)
+	{
+		WriteDropDown(writer, ShaderNamingExportModeDropDownSetting.Instance, Configuration.ExportSettings.ShaderNamingExportMode, nameof(ExportSettings.ShaderNamingExportMode));
 	}
 
 	private static void WriteCheckBoxForExportUnreadableAssets(TextWriter writer, string label, bool disabled = false)

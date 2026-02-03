@@ -88,6 +88,8 @@ public class ExportHandler
 		yield return new PrefabProcessor();
 		yield return new SpriteProcessor();
 		yield return new ScriptableObjectProcessor();
+		if (Settings.ExportSettings.ShaderNamingExportMode != ShaderNamingExportMode.Default)
+			yield return new ShaderProcessor();
 	}
 
 	public void Export(GameData gameData, string outputPath, FileSystem fileSystem)

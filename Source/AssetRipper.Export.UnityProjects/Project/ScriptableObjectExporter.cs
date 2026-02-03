@@ -1,4 +1,5 @@
 ﻿using AssetRipper.Assets;
+using AssetRipper.Export.UnityProjects.Timberborn;
 using AssetRipper.SourceGenerated.Classes.ClassID_114;
 using AssetRipper.SourceGenerated.Extensions;
 
@@ -20,6 +21,11 @@ public class ScriptableObjectExporter : YamlExporterBase
 
 	public override bool TryCreateCollection(IUnityObjectBase asset, [NotNullWhen(true)] out IExportCollection? exportCollection)
 	{
+		if (BlueprintExporter.IsBlueprint(asset))
+		{
+			exportCollection = null;
+			return false;
+		}
 		exportCollection = asset switch
 		{
 			IMonoBehaviour monoBehaviour => CreateCollection(monoBehaviour),

@@ -12,6 +12,7 @@ using AssetRipper.Export.UnityProjects.Scripts;
 using AssetRipper.Export.UnityProjects.Shaders;
 using AssetRipper.Export.UnityProjects.Terrains;
 using AssetRipper.Export.UnityProjects.Textures;
+using AssetRipper.Export.UnityProjects.Timberborn;
 using AssetRipper.Import.AssetCreation;
 using AssetRipper.Import.Structure.Assembly.Managers;
 using AssetRipper.Mining.PredefinedAssets;
@@ -68,7 +69,7 @@ partial class ProjectExporter
 
 		OverrideExporter<IMonoBehaviour>(new ScriptableObjectExporter(), true);
 
-		SceneYamlExporter sceneExporter = new();
+		SceneYamlExporter sceneExporter = new(settings);
 		OverrideExporter<IPrefabInstance>(sceneExporter, true);
 		OverrideExporter<IGameObject>(sceneExporter, true);
 		OverrideExporter<IComponent>(sceneExporter, true);
@@ -179,6 +180,11 @@ partial class ProjectExporter
 		ScriptableObjectGroupExporter scriptableObjectGroupExporter = new();
 		OverrideExporter<IMonoBehaviour>(scriptableObjectGroupExporter);
 		OverrideExporter<ScriptableObjectGroup>(scriptableObjectGroupExporter);
+
+		if (settings.ExportSettings.BlueprintExportFormat == BlueprintExportFormat.Json)
+		{
+			OverrideExporter<IMonoBehaviour>(new BlueprintExporter());
+		}
 	}
 
 	//These need to be absolutely last
