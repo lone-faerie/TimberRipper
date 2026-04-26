@@ -1,19 +1,22 @@
-# AssetRipper
+# TimberRipper
 
-[![](https://img.shields.io/github/downloads/AssetRipper/AssetRipper/total.svg)](https://github.com/AssetRipper/AssetRipper/releases)
-[![](https://img.shields.io/github/downloads/AssetRipper/AssetRipper/latest/total.svg)](https://github.com/AssetRipper/AssetRipper/releases/latest)
-[![](https://img.shields.io/github/v/release/AssetRipper/AssetRipper)](https://github.com/AssetRipper/AssetRipper/releases/latest)
-[![](https://weblate.samboy.dev/widgets/assetripper/-/gui/svg-badge.svg)](http://weblate.samboy.dev/engage/assetripper/)
+[![](https://img.shields.io/github/downloads/lone-faerie/TimberRipper/total.svg)](https://github.com/lone-faerie/TimberRipper/releases)
+[![](https://img.shields.io/github/downloads/lone-faerie/TimberRipper/latest/total.svg)](https://github.com/lone-faerie/TimberRipper/releases/latest)
+[![](https://img.shields.io/github/v/release/lone-faerie/TimberRipper)](https://github.com/lone-faerie/TimberRipper/releases/latest)
 
-AssetRipper is a tool for extracting assets from Unity serialized files (*CAB-*\*, *\*.assets*, *\*.sharedAssets*, etc.) and asset bundles (*\*.unity3d*, *\*.bundle*, etc.) and converting them into the native Unity engine format.
+TimberRipper is a Timberborn-specific fork of AssetRipper, a tool for extracting assets from Unity serialized files (*CAB-*\*, *\*.assets*, *\*.sharedAssets*, etc.) and asset bundles (*\*.unity3d*, *\*.bundle*, etc.) and converting them into the native Unity engine format.
 
-AssetRipper supports Unity versions from `3.5.0` to `6000.5.X`. However, support quality may vary slightly for different Unity versions.
+TimberRipper supports Unity versions from `3.5.0` to `6000.5.X`. However, support quality may vary slightly for different Unity versions.
 
 # Premium Edition
+
+TimberRipper has no premium edition. If you are a fan, support the original devs of AssetRipper.
 
 [Patreon](https://www.patreon.com/ds5678) supporters at the `Premium` tier or higher receive access to the premium edition of AssetRipper. This edition includes additional [features and improvements](https://assetripper.github.io/AssetRipper/articles/PremiumFeatures.html).
 
 # Donations
+
+TimberRipper does not accept donations. However, please support AssetRipper if you find this tool useful.
 
 Your support helps maintain and improve AssetRipper. If you find this tool useful, please consider donating:
 
@@ -39,7 +42,7 @@ The development of this project has a dedicated [Discord server](https://discord
 
 # Legal Disclaimers
 
-AssetRipper is licensed under the [GNU General Public License v3.0](LICENSE.md).
+TimberRipper is licensed under the [GNU General Public License v3.0](LICENSE.md).
 
 Please be aware that using or distributing the output from this software may be against copyright legislation in your jurisdiction. You are responsible for ensuring that you're not breaking any laws.
 
