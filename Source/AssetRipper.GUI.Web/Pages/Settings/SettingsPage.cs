@@ -159,7 +159,37 @@ public sealed partial class SettingsPage : DefaultPage
 								}
 								using (new Div(writer).WithClass("col").End())
 								{
-									WriteDropDownForShaderNamingExportMode(writer);
+								}
+							}
+
+							using (new Div(writer).WithClass("row").End())
+							{
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteCheckBoxForScriptTypesFullyQualified(writer, Localization.ScriptsUseFullyQualifiedTypeNames);
+								}
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteCheckBoxForSaveSettingsToDisk(writer, Localization.SaveSettingsToDisk);
+								}
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteCheckBoxForExportUnreadableAssets(writer, Localization.ExportUnreadableAssets);
+								}
+							}
+						}
+
+						new Hr(writer).Close();
+
+						using (new Div(writer).End())
+						{
+							new H3(writer).Close(Localization.Timberborn);
+
+							using (new Div(writer).WithClass("row").End())
+							{
+								using (new Div(writer).WithClass("col").End())
+								{
+									WriteTextAreaForTimberbornModdingFolder(writer);
 								}
 							}
 
@@ -178,19 +208,12 @@ public sealed partial class SettingsPage : DefaultPage
 									WriteDropDownForTimberMapExportFormat(writer);
 								}
 							}
+
 							using (new Div(writer).WithClass("row").End())
 							{
 								using (new Div(writer).WithClass("col").End())
 								{
-									WriteCheckBoxForScriptTypesFullyQualified(writer, Localization.ScriptsUseFullyQualifiedTypeNames);
-								}
-								using (new Div(writer).WithClass("col").End())
-								{
-									WriteCheckBoxForSaveSettingsToDisk(writer, Localization.SaveSettingsToDisk);
-								}
-								using (new Div(writer).WithClass("col").End())
-								{
-									WriteCheckBoxForExportUnreadableAssets(writer, Localization.ExportUnreadableAssets);
+									WriteCheckBoxForRenameShaders(writer, Localization.RenameShaders);
 								}
 							}
 						}
@@ -226,6 +249,18 @@ public sealed partial class SettingsPage : DefaultPage
 			.WithId(nameof(Configuration.ImportSettings.TargetVersion))
 			.WithName(nameof(Configuration.ImportSettings.TargetVersion))
 			.WithValue(Configuration.ImportSettings.TargetVersion.ToString())
+			.Close();
+	}
+
+	private static void WriteTextAreaForTimberbornModdingFolder(TextWriter writer)
+	{
+		new Label(writer).WithClass("form-label").WithFor(nameof(Configuration.ExportSettings.TimberbornModdingFolder)).Close(Localization.TimberbornModdingFolder);
+		new Input(writer)
+			.WithType("text")
+			.WithClass("form-control")
+			.WithId(nameof(Configuration.ExportSettings.TimberbornModdingFolder))
+			.WithName(nameof(Configuration.ExportSettings.TimberbornModdingFolder))
+			.WithValue(Configuration.ExportSettings.TimberbornModdingFolder)
 			.Close();
 	}
 

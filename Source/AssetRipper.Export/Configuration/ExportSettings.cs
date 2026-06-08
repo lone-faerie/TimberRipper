@@ -69,6 +69,16 @@ public sealed record class ExportSettings
 	/// </summary>
 	public ShaderNamingExportMode ShaderNamingExportMode { get; set; } = ShaderNamingExportMode.Ripped;
 
+	/// <summary>
+	/// Append '(Ripped)' to shader names to avoid conflict with shaders imported by Timberborn tools.
+	/// </summary>
+	public bool RenameShaders { get; set; }
+
+	/// <summary>
+	/// Path to the timberborn-modding folder.
+	/// </summary>
+	public string? TimberbornModdingFolder { get; set; }
+
 	public bool ExportUnreadableAssets { get; set; } = false;
 
 	public bool SaveSettingsToDisk { get; set; }

@@ -69,6 +69,9 @@ partial class SettingsPage
 			case nameof(ExportSettings.LanguageCode):
 				Configuration.ExportSettings.LanguageCode = value;
 				break;
+			case nameof(ExportSettings.TimberbornModdingFolder):
+				Configuration.ExportSettings.TimberbornModdingFolder = value;
+				break;
 		}
 	}
 
@@ -83,6 +86,7 @@ partial class SettingsPage
 		{ nameof(ExportSettings.ScriptTypesFullyQualified), (value) => { Configuration.ExportSettings.ScriptTypesFullyQualified = value; } },
 		{ nameof(ExportSettings.ExportUnreadableAssets), (value) => { Configuration.ExportSettings.ExportUnreadableAssets = value; } },
 		{ nameof(ExportSettings.SaveSettingsToDisk), (value) => { Configuration.ExportSettings.SaveSettingsToDisk = value; } },
+		{ nameof(ExportSettings.RenameShaders), (value) => { Configuration.ExportSettings.RenameShaders = value; } },
 	};
 
 	private static void WriteDropDownForScriptContentLevel(TextWriter writer)
@@ -193,6 +197,11 @@ partial class SettingsPage
 	private static void WriteDropDownForShaderNamingExportMode(TextWriter writer)
 	{
 		WriteDropDown(writer, ShaderNamingExportModeDropDownSetting.Instance, Configuration.ExportSettings.ShaderNamingExportMode, nameof(ExportSettings.ShaderNamingExportMode));
+	}
+
+	private static void WriteCheckBoxForRenameShaders(TextWriter writer, string label, bool disabled = false)
+	{
+		WriteCheckBox(writer, label, Configuration.ExportSettings.RenameShaders, nameof(ExportSettings.RenameShaders), disabled);
 	}
 
 	private static void WriteCheckBoxForExportUnreadableAssets(TextWriter writer, string label, bool disabled = false)

@@ -3,6 +3,7 @@ using AssetRipper.Export.Configuration;
 using AssetRipper.Export.UnityProjects.PathIdMapping;
 using AssetRipper.Export.UnityProjects.Project;
 using AssetRipper.Export.UnityProjects.Scripts;
+using AssetRipper.Export.UnityProjects.Timberborn;
 using AssetRipper.Import.Configuration;
 using AssetRipper.Import.Logging;
 using AssetRipper.Import.Structure;
@@ -88,7 +89,7 @@ public class ExportHandler
 		yield return new PrefabProcessor();
 		yield return new SpriteProcessor();
 		yield return new ScriptableObjectProcessor();
-		if (Settings.ExportSettings.ShaderNamingExportMode != ShaderNamingExportMode.Default)
+		if (Settings.ExportSettings.ShaderNamingExportMode != ShaderNamingExportMode.Default || Settings.ExportSettings.RenameShaders)
 			yield return new ShaderProcessor();
 	}
 
@@ -136,6 +137,7 @@ public class ExportHandler
 		yield return new StreamingAssetsPostExporter();
 		yield return new DllPostExporter();
 		yield return new PathIdMapExporter();
+		yield return new MaterialExporter();
 	}
 
 	public GameData LoadAndProcess(IReadOnlyList<string> paths, FileSystem fileSystem)

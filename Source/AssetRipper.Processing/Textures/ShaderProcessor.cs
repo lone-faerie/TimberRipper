@@ -22,8 +22,9 @@ public sealed partial class ShaderProcessor : IAssetProcessor
 	{
 		foreach (IShader shader in gameData.GameBundle.FetchAssets().OfType<IShader>())
 		{
-			if (shader.ParsedForm is not null)
+			if (shader.ParsedForm is not null) {
 				shader.ParsedForm.Name += " (Ripped)";
+			}
 		}
 	}
 }

@@ -103,8 +103,8 @@ public static class Logger
 		Log(LogType.Info, LogCategory.System, $"System Version: {AssetRipperRuntimeInformation.OS.Version}");
 		Log(LogType.Info, LogCategory.System, $"Operating System: {AssetRipperRuntimeInformation.OS.Name} {AssetRipperRuntimeInformation.ProcessArchitecture}");
 		ErrorIfBigEndian();
-		Log(LogType.Info, LogCategory.System, $"AssetRipper Version: {AssetRipperRuntimeInformation.Build.Version}");
-		Log(LogType.Info, LogCategory.System, $"AssetRipper Build Type: {AssetRipperRuntimeInformation.Build.Configuration} {AssetRipperRuntimeInformation.Build.Type}");
+		Log(LogType.Info, LogCategory.System, $"TimberRipper Version: {AssetRipperRuntimeInformation.Build.Version}");
+		Log(LogType.Info, LogCategory.System, $"TimberRipper Build Type: {AssetRipperRuntimeInformation.Build.Configuration} {AssetRipperRuntimeInformation.Build.Type}");
 		Log(LogType.Info, LogCategory.System, $"UTC Current Time: {AssetRipperRuntimeInformation.CurrentTime}");
 		Log(LogType.Info, LogCategory.System, $"UTC Compile Time: {AssetRipperRuntimeInformation.CompileTime}");
 	}

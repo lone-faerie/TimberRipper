@@ -77,12 +77,12 @@ public static class WebApplicationLauncher
 		{
 			if (string.IsNullOrEmpty(logPath))
 			{
-				logPath = ExecutingDirectory.Combine($"AssetRipper_{DateTime.Now:yyyyMMdd_HHmmss}.log");
+				logPath = ExecutingDirectory.Combine($"TimberRipper_{DateTime.Now:yyyyMMdd_HHmmss}.log");
 				RotateLogs(logPath);
 			}
 			Logger.Add(new FileLogger(logPath));
 		}
-		Logger.LogSystemInformation("AssetRipper");
+		Logger.LogSystemInformation("TimberRipper");
 		Logger.Add(new ConsoleLogger());
 
 		Localization.LoadLanguage(GameFileLoader.Settings.LanguageCode);
@@ -380,7 +380,7 @@ public static class WebApplicationLauncher
 		}
 
 		FileInfo[] logFiles = new DirectoryInfo(directory)
-			.GetFiles("AssetRipper_*.log")
+			.GetFiles("TimberRipper_*.log")
 			.OrderBy(f => f.Name)
 			.ToArray();
 
